@@ -1,3 +1,7 @@
+A simple State Management React project using context api from React.
+
+![alt text](https://github.com/alexandrecz/modern-react-counter/blob/master/img/app.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
