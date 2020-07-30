@@ -1,5 +1,16 @@
 import React, { useState, useContext } from 'react';
 import { MovieContext } from './MovieContext';
+import style from 'styled-components';
+
+const Form = style.form`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 18vh;
+    width: 80%;  
+    margin: auto;
+    border-bottom: 2px solid slategrey; 
+`;
 
 const AddMovie = () => {
     
@@ -21,13 +32,12 @@ const AddMovie = () => {
     };
 
 
-
     return (
-        <form onSubmit={addMovie}>
+        <Form onSubmit={addMovie}>
             <input type="text" name="name" value={name} onChange={updateName}/>
             <input type="text" name="price" value={price} onChange={updatePrice}/>
-            <button>Submit</button>
-        </form>
+            <button className="App-button">Submit</button>
+        </Form>
 
     );
 }
