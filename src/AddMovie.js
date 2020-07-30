@@ -3,6 +3,9 @@ import { MovieContext } from './MovieContext';
 import style from 'styled-components';
 
 const Form = style.form`
+    @media(max-width:767px){
+        
+    }
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -10,6 +13,15 @@ const Form = style.form`
     width: 80%;  
     margin: auto;
     border-bottom: 2px solid slategrey; 
+`;
+
+const Input = style.input`
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    border-bottom: 2px solid #ddd;    
+    width: 300px;
+    outline: none;
 `;
 
 const AddMovie = () => {
@@ -34,8 +46,18 @@ const AddMovie = () => {
 
     return (
         <Form onSubmit={addMovie}>
-            <input type="text" name="name" value={name} onChange={updateName}/>
-            <input type="text" name="price" value={price} onChange={updatePrice}/>
+            <Input 
+                type="text"
+                placeholder="Type movie name here"
+                name="name"
+                value={name} 
+                onChange={updateName}/>
+            <Input 
+                type="number"
+                name="price"
+                placeholder="Type movie price here"
+                value={price}
+                onChange={updatePrice}/>
             <button className="App-button">Submit</button>
         </Form>
 
