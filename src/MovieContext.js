@@ -12,6 +12,21 @@ export const MovieProvider = props => {
         setMovies(movies);
     }   
 
+    const addMovie = async movie => {
+        const body = JSON.stringify(movie);
+        const response = await fetch('http://localhost:8000/movies', {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            method: 'post',
+            body,
+        });
+    
+        const mov = await response.json();
+        
+        setMovies(previousMovies => [...previousMovies, mov]);         
+    }
+
     useEffect(() => {
         fetchMovies();       
     },
@@ -20,7 +35,7 @@ export const MovieProvider = props => {
     
 
     return (
-        <MovieContext.Provider value={[movies, setMovies]}>
+        <MovieContext.Provider value={[movies, setMovies, addMovie]}>
             {props.children}
         </MovieContext.Provider>
 

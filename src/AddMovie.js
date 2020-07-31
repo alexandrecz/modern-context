@@ -28,7 +28,8 @@ const Input = style.input`
 const AddMovie = () => {
     
     // eslint-disable-next-line
-    const [movies, setMovies] = useContext(MovieContext);
+    const [movies, setMovies, addMovie] = useContext(MovieContext);
+    
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     
@@ -40,14 +41,15 @@ const AddMovie = () => {
         setPrice(e.target.value);
     };
 
-    const addMovie = e => {
+    const submitMovie = e => {
         e.preventDefault();
-        setMovies(previousMovies => [...previousMovies, {name: name, price: price, id:new Date().getTime}]);
+        const newMovie = {name: name, price: price};              
+        addMovie(newMovie);
     };
-
+    
 
     return (
-        <Form onSubmit={addMovie}>
+        <Form onSubmit={submitMovie}>
             <Input 
                 type="text"
                 autocomplete="off"

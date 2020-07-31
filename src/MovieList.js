@@ -31,8 +31,8 @@ const ListItem = style.li`
 `;
 
 const MovieList = () => {
-    // eslint-disable-next-line
-    const [movies, setMovies] = useContext(MovieContext);
+    
+    const [movies] = useContext(MovieContext);
     
     const [listVisibility, setListVisibility] = useState(false);
     const toggleVisibility = () => setListVisibility(!listVisibility||true);       
