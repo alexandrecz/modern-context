@@ -24,16 +24,18 @@ const Input = style.input`
     outline: none;
 `;
 
+
 const AddMovie = () => {
     
-    const [name, setName] = useState('');
-    const [price, setPrice] = useState('');
     // eslint-disable-next-line
     const [movies, setMovies] = useContext(MovieContext);
-
+    const [name, setName] = useState('');
+    const [price, setPrice] = useState('');
+    
     const updateName = e => {
         setName(e.target.value);
     };
+
     const updatePrice = e => {
         setPrice(e.target.value);
     };
@@ -52,6 +54,7 @@ const AddMovie = () => {
                 name="name"
                 value={name} 
                 onChange={updateName}/>
+            
             <Input 
                 type="number"
                 name="price"
