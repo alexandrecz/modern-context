@@ -2,7 +2,7 @@ A simple State Management React project using context api from React.
 
 Also using styled component and Stagger Effect.
 
-![alt text](https://github.com/alexandrecz/modern-context/blob/master/img/appa.png)
+![alt text](https://github.com/alexandrecz/modern-context/blob/master/img/app.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
