@@ -1,26 +1,23 @@
-import React, { useState, createContext  } from 'react';
+import React, { useState, createContext, useEffect  } from 'react';
 
 export const MovieContext = createContext();
 
 export const MovieProvider = props => {
 
-    const [movies, setMovies] = useState([
-        {
-            name: "Man of steel",
-            price: "$10",
-            id: 1
-        },
-        {
-            name: "Batman vs Superman",
-            price: "$10",
-            id: 2
-        },
-        {
-            name: "Justice League",
-            price: "$10",
-            id: 3
-        },
-    ]);
+    const [movies, setMovies] = useState([]);
+
+    const fetchMovies = async () => {
+        const data = await fetch('http://localhost:8000/movies')
+        const movies = await data.json();
+        setMovies(movies);
+    }   
+
+    useEffect(() => {
+        fetchMovies();       
+    },
+    // eslint-disable-next-line
+    []);   
+    
 
     return (
         <MovieContext.Provider value={[movies, setMovies]}>

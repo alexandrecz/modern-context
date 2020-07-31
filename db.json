@@ -1,0 +1,19 @@
+{
+  "movies":[
+      {
+          "name": "Man of steel",
+          "price": "$10",
+          "id": 1
+      },
+      {
+          "name": "Batman vs Superman",
+          "price": "$10",
+          "id": 2
+      },
+      {
+          "name": "Snyder Cut",
+          "price": "$10",
+          "id": 3
+      }
+  ]
+}

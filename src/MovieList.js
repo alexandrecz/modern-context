@@ -35,11 +35,13 @@ const MovieList = () => {
     const [movies, setMovies] = useContext(MovieContext);
     
     const [listVisibility, setListVisibility] = useState(false);
-    const toggleVisibility = () => setListVisibility(listVisibility||true);
-        
+    const toggleVisibility = () => setListVisibility(!listVisibility||true);       
     
     useEffect(() => {
-        toggleVisibility();
+        //just a little w.a. to get the proper stagger effect after render
+        setTimeout(() => {
+            toggleVisibility();
+        }, 100);
     })
     
     
@@ -47,7 +49,7 @@ const MovieList = () => {
     
     <List> 
         {movies.map((movie, index) => (
-           <ListItem key={movie.id} isVisible={listVisibility} delay={index*150}>
+           <ListItem key={movie.id} isVisible={listVisibility} delay={index*300}>
                <Movie movie={movie} />              
            </ListItem>
        ))}
