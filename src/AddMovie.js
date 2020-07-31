@@ -50,6 +50,7 @@ const AddMovie = () => {
         <Form onSubmit={addMovie}>
             <Input 
                 type="text"
+                autocomplete="off"
                 placeholder="Type movie name here"
                 name="name"
                 value={name} 
@@ -57,6 +58,7 @@ const AddMovie = () => {
             
             <Input 
                 type="number"
+                autocomplete="off"
                 name="price"
                 placeholder="Type movie price here"
                 value={price}
