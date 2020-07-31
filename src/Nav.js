@@ -10,8 +10,8 @@ const Nav = () => {
     return (
         <nav>
             <img src={logo} className="App-logo" alt="logo" />
-            <h1>React Managment State</h1>
-            <h3>List of Movies: {movies.length}</h3>            
+            <h1>React Management State</h1>
+            <h3>Movies: {movies.length}</h3>            
         </nav>
     )
 }

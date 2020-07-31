@@ -22,7 +22,7 @@ const ListItem = style.li`
     box-shadow: 0 0 6px 3px rgba(0,0,0,0.1);
     font-size: 1.4rem;
     font-weight: bold;    
-    padding:25px;
+    padding:2px;
     margin-bottom: 20px;
     width: 80%;    
     transition: opacity .3s;     
@@ -41,7 +41,7 @@ const MovieList = () => {
         //just a little w.a. to get the proper stagger effect after render
         setTimeout(() => {
             toggleVisibility();
-        }, 100);
+        }, 500);
     })
     
     
@@ -49,7 +49,7 @@ const MovieList = () => {
     
     <List> 
         {movies.map((movie, index) => (
-           <ListItem key={movie.id} isVisible={listVisibility} delay={index*300}>
+           <ListItem key={movie.id} isVisible={listVisibility} delay={index*150}>
                <Movie movie={movie} />              
            </ListItem>
        ))}
